@@ -1,6 +1,8 @@
+const BASEURL = "https://swapi.tech/api/";
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
+			character: null,
 			demo: [
 				{
 					title: "FIRST",
@@ -37,7 +39,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				//reset the global store
 				setStore({ demo: demo });
-			}
+			},
+			getCharacterByUid: (id)=>{
+				fetch(BASEURL + 'people/'+id).then(response => response.json()).then(data => setStore({character: data.result})).catch(err => console.log(err))
+					// console.log(typeof BASEURL)
+			},
 		}
 	};
 };
