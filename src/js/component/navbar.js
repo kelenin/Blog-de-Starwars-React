@@ -13,8 +13,8 @@ export const Navbars = () => {
 					<img
 					alt=""
 					src={logo}
-					width="80"
-					height="40"
+					width="100px"
+					height="80px"
 					className="d-inline-block align-top"
 					/>
 				</Navbar.Brand>
