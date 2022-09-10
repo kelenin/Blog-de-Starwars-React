@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Dropdown from 'react-bootstrap/Dropdown';
 import { Container } from "react-bootstrap";
 import Navbar from 'react-bootstrap/Navbar';
+import logo from '../../img/star-wars-logo.png'
 
 export const Navbars = () => {
 	return (
@@ -11,9 +12,9 @@ export const Navbars = () => {
 				<Navbar.Brand>
 					<img
 					alt=""
-					src="../star-wars-logo.png"
-					width="30"
-					height="30"
+					src={logo}
+					width="80"
+					height="40"
 					className="d-inline-block align-top"
 					/>
 				</Navbar.Brand>
