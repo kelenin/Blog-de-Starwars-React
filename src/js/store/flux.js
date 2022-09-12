@@ -52,6 +52,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				let [people,planets,vehicles] = await Promise.all([p1,p2,p3])
 				if(people.ok){
 					let body = await people.json()
+					console.log(body.results);
 					setStore({characters: body.results})
 				}
 				if(planets.ok){
