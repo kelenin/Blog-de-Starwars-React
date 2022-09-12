@@ -2,7 +2,9 @@ const BASEURL = "https://swapi.tech/api/";
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
+			detalles: null,
 			character: null,
+			favorites: [],
 			demo: [
 				{
 					title: "FIRST",
@@ -26,6 +28,23 @@ const getState = ({ getStore, getActions, setStore }) => {
 					fetch().then().then(data => setStore({ "foo": data.bar }))
 				*/
 			},
+			getCharacter: (id,endpoint) => {
+				fetch(`${BASEURL}${endpoint}/${id}`)
+				  .then((response) => response.json())
+				  .then((data) => setStore({ detalles: data.result }))
+				  .catch((err) => console.log(err));
+			},
+			AgregarFavoritos: (name,url) =>{
+				let store = getStore()
+				const favs = [...store.favorites, {favName: name, url:url}];
+				setStore({favorites:favs})
+				
+			  },
+			  removeFavorite:(position) =>{
+				let store = getStore()
+				const newFav = store.favorites.filter((fav,index) => index !== position);
+				setStore({favorites:newFav})
+			  },
 			changeColor: (index, color) => {
 				//get the store
 				const store = getStore();
