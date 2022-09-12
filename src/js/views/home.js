@@ -11,7 +11,7 @@ export const Home = () => {
 	},[])
 
 	return (
-		<div className="container principal">
+		<div className="container">
 			
 			<h1 className="p-title my-3">Characters</h1>
 			<div className="d-flex flex-row flex-nowrap overflow-auto">

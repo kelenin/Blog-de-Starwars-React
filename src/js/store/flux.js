@@ -1,4 +1,4 @@
-const BASEURL = " https://swapi.dev/api/";
+const BASEURL = "https://www.swapi.tech/api/";
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
@@ -30,9 +30,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			getCharacter: (id,endpoint) => {
 				fetch(`${BASEURL}${endpoint}/${id}`)
-				  .then((response) => response.json())
-				  .then((data) => setStore({ details: data.result }))
-				  .catch((err) => console.log(err));
+				.then((response) => response.json())
+				.then((data) => 				  
+					setStore({ details: data.result })
+				)
+				.catch((err) => console.log(err));
 			},
 			AgregarFavoritos: (name,url) =>{
 				let store = getStore()
@@ -46,13 +48,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({favorites:newFav})
 			  },
 			getInfomation: async() => {
-				const p1 = fetch(BASEURL + 'people/');
-				const p2 = fetch(BASEURL + 'planets/');
-				const p3 = fetch(BASEURL + 'vehicles/');
+				const p1 = fetch(BASEURL + '/people/');
+				const p2 = fetch(BASEURL + '/planets/');
+				const p3 = fetch(BASEURL + '/vehicles/');
 				let [people,planets,vehicles] = await Promise.all([p1,p2,p3])
 				if(people.ok){
 					let body = await people.json()
-					console.log(body.results);
 					setStore({characters: body.results})
 				}
 				if(planets.ok){

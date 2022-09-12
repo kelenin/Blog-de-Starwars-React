@@ -23,10 +23,10 @@ export const Character = () => {
 				<img src={starWarsImg} className="img-details img-top" alt="..."  />
 				</div>
 				<div className="col">
-				<h2 className="text-detail">
+				<h2 className="text-black">
 					{store.details && store.details.properties.name}
 				</h2>
-					<p className=" text-light">
+					<p className="text-black">
 					Sed quis posuere nulla. Donec vel nisl porta, volutpat ex
 					ultrices, sollicitudin magna. Ut mattis, justo at ornare
 					consequat, nunc erat tempus ex, et facilisis lectus metus a diam.
@@ -43,40 +43,40 @@ export const Character = () => {
 					
 				</div>
 			</div>
-			<hr className="linea" style={{color:"#33E0FF", widht:"100%", height:"5px"}}></hr>
-			<div className="row p-title" style={{color:"#33E0FF"}}>
+			<hr className="linea" style={{color:"#FF0000", widht:"100%", height:"5px"}}></hr>
+			<div className="row p-title" style={{color:"#FF0000"}}>
 			
 				<div className="col">
 					<h3 className="p-title">Name</h3>
-					{store.details && store.details.properties.name}
+					<span style={{color:"#000000"}}>{store.details && store.details.properties.name}</span>
 				</div>
 				
 				<div className="col">
 				<h3>{params.endpoint == "people" ? "Birth": params.endpoint == "planets" ? "Diameter": "Model"}</h3>
-				{params.endpoint == "people" ? store.details && store.details.properties.birth_year : params.endpoint == "planets" ? store.details && store.details.properties.diameter : store.details && store.details.properties.model}
+				<span style={{color:"#000000"}}>{params.endpoint == "people" ? store.details && store.details.properties.birth_year : params.endpoint == "planets" ? store.details && store.details.properties.diameter : store.details && store.details.properties.model}</span>
 				</div>
 			
 				
 				<div className="col">
-				<h3 className="text-info">{params.endpoint == "people" ? "Gender": params.endpoint == "planets" ? "Gravity": "vehicle_class"}</h3>
-				{params.endpoint == "people" ? store.details && store.details.properties.gender : params.endpoint == "planets" ? store.details && store.details.properties.gravity : store.details && store.details.properties.vehicle_class}
+				<h3>{params.endpoint == "people" ? "Gender": params.endpoint == "planets" ? "Gravity": "vehicle_class"}</h3>
+				<span style={{color:"#000000"}}>{params.endpoint == "people" ? store.details && store.details.properties.gender : params.endpoint == "planets" ? store.details && store.details.properties.gravity : store.details && store.details.properties.vehicle_class}</span>
 
 				</div>
 				
 				<div className="col">
 				<h3>{params.endpoint == "people" ? "Height": params.endpoint == "planets" ? "Climate": "cargo_capacity"}</h3>
-				{params.endpoint == "people" ? store.details && store.details.properties.height : params.endpoint == "planets" ? store.details && store.details.properties.climate : store.details && store.details.properties.cargo_capacity}
+				<span style={{color:"#000000"}}>{params.endpoint == "people" ? store.details && store.details.properties.height : params.endpoint == "planets" ? store.details && store.details.properties.climate : store.details && store.details.properties.cargo_capacity}</span>
 
 				</div>
 				
 				<div className="col">
 				<h3>{params.endpoint == "people" ? "Skin color": params.endpoint == "planets" ? "Terrain": "manufacturer"}</h3>
-				{params.endpoint == "people" ? store.details && store.details.properties.skin_color : params.endpoint == "planets" ? store.details && store.details.properties.terrain : store.details && store.details.properties.manufacturer}
+				<span style={{color:"#000000"}}>{params.endpoint == "people" ? store.details && store.details.properties.skin_color : params.endpoint == "planets" ? store.details && store.details.properties.terrain : store.details && store.details.properties.manufacturer}</span>
 				</div>
 				
 				<div className="col">
 				<h3>{params.endpoint == "people" ? "Eye color": params.endpoint == "planets" ?"orbital_period": "length"}</h3>
-				{params.endpoint == "people" ? store.details && store.details.properties.eye_color : params.endpoint == "planets" ? store.details && store.details.properties.orbital_period : store.details && store.details.properties.length}
+				<span style={{color:"#000000"}}>{params.endpoint == "people" ? store.details && store.details.properties.eye_color : params.endpoint == "planets" ? store.details && store.details.properties.orbital_period : store.details && store.details.properties.length}</span>
 				</div>
 
 			
