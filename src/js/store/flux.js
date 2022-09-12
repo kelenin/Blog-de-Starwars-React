@@ -40,7 +40,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({favorites:favs})
 				
 			  },
-			  removeFavorite:(position) =>{
+			EliminarFavorite:(position) =>{
 				let store = getStore()
 				const newFav = store.favorites.filter((fav,index) => index !== position);
 				setStore({favorites:newFav})

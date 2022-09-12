@@ -1,7 +1,7 @@
 import React, { useContext} from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import starWarsImg from "../../img/starWarsLogo.png"
+import starWarsLogo from "../../img/starWarsLogo.png"
 import { Context } from "../store/appContext";
 
 const Card = (props) => {
@@ -9,7 +9,7 @@ const Card = (props) => {
     return (
         <div>
         <div className="card card-info mt-2 mx-2 mb-2" style={{minWidth:"300px"}}>
-          <img src={starWarsImg} className="card-img-top" alt="..." />
+          <img src={starWarsLogo} className="card-img-top" alt="..." />
           <div className="card-body">
             <h5 className="card-title">{props.item.name}</h5>
             <p className="card-text">

@@ -29,7 +29,7 @@ export const Navbars = () => {
 						{store.favorites.map((favorite,index) =>{
 							return (
 								<Dropdown.Item href="#" key={index}>{favorite.favName}
-								<i className="far fa-trash-alt pe-2" onClick={()=>{actions.removeFavorite(index)}}></i>
+								<i className="far fa-trash-alt pe-2" onClick={()=>{actions.EliminarFavorite(index)}}></i>
 								</Dropdown.Item>
 							)
 						})}
