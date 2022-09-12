@@ -7,7 +7,7 @@ export const Home = () => {
 	
 	const {store, actions} = useContext(Context)
 	useEffect(()=>{
-		actions.getInfo()
+		actions.getInfomation()
 	},[])
 
 	return (
@@ -26,7 +26,7 @@ export const Home = () => {
 					return <Card key={planet.uid} item={planet} endpoint="planets"/>
 				})}
 			</div>
-			
+
 			<h1 className="p-title my-3">Vehicles</h1>
 			<div className="d-flex flex-row flex-nowrap overflow-auto">
 				{store.vehicles && store.vehicles.map((vehicle)=> {
